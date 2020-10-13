@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head.ejs')  %> 
+  <body>
+    <%- include('./partials/header.ejs')  %> 
+    <div class="container">
+      <h1><%= title %></h1>
+      <div class="row">
+   
+        <form action="/movies/edit/<%= pelicula.id %>?_method=PUT" method="POST">
+            
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Titulo de la pelicula</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1"
+                    value="<%= pelicula.title %>" name="title">
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label for="">Rating</label>
+                    <input type="number" class="form-control" name="rating" value="<%= pelicula.rating %>">
+                </div>
+                <div class="col">
+                    <label for="">Awards</label>
+                    <input type="number" class="form-control" name="awards" value="<%= pelicula.awards %>">
+                </div>
+                <div class="col">
+                    <label for="">Fecha de estreno</label>
+                    <input type="date" class="form-control" name="release_date" value="<%= pelicula.release_date %>">
+                </div>
+            </div>
+            <div class="col">
+                <label for="">Duración</label>
+                <input type="number" class="form-control" name="length" value="<%= pelicula.length %>">
+            </div>
+            <div class="mt-5 mr-5 d-flex justify-content-end">
+               <a href="/movies/detail/<%= pelicula.id %> "> <button type="submit" class="btn btn-outline-secondary mr-3">Cancelar</button></a>
+                <button type="submit" class="btn btn-outline-primary">Editar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+<%- include('./partials/footer.ejs')  %> 
+  </body>
+</html>
