@@ -1,6 +1,8 @@
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(to top, #f7797d ,#fbd786 ,#c6ffdd); 
 }
 
 a {
